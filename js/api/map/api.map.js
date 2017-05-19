@@ -2,9 +2,8 @@ function mapApi(json) {
 
     alert('mapApi');
     alert(json);
-    alert(JSON.parse(json));
-    CTSI_API_JSON = JSON.parse(json);
-    alert(CTSI_API_JSON);
+    alert(json.baseInfo.province);
+    CTSI_API_JSON = json;
     empInPostSummary();
 }
 
