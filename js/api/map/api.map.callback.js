@@ -7,21 +7,19 @@ function cbEmpInPostSummary(json) {
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var lchar = 0;
         var zchar = 0;
-        $.each(json.data, function (i, item) {
-            // 异常
-            $.each(item.inPostYesRate, function (j, ipyr) {
-                $('#y_proportion').html(ipyr.proportion);
-                $("#y_proportion").attr("title", ipyr.totalNum);
-                lchar = ipyr.proportion;
-            })
-            // 正常
-            $.each(item.inPostNoRate, function (k, ipnr) {
-                $('#n_proportion').html(ipnr.proportion);
-                $("#n_proportion").attr("title", ipnr.totalNum);
-                zchar = ipnr.proportion;
-            })
+        // 异常
+        $.each(json.data.inPostYesRate, function (j, ipyr) {
+            $('#y_proportion').html(ipyr.proportion);
+            $("#y_proportion").attr("title", ipyr.totalNum);
+            lchar = substringChar(ipyr.proportion);
         })
-        scaleMap2('h-guard', 'h-ltwig', 'h-rtwig', substringChar(lchar), substringChar(zchar));
+        // 正常
+        $.each(json.data.inPostNoRate, function (k, ipnr) {
+            $('#n_proportion').html(ipnr.proportion);
+            $("#n_proportion").attr("title", ipnr.totalNum);
+            zchar = substringChar(ipnr.proportion);
+        })
+        scaleMap2('h-guard', 'h-ltwig', 'h-rtwig', lchar, zchar);
 
         postInfoOverview();
     } else {
