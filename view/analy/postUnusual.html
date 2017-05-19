@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在岗异常识别</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../../css/normstyle/normIndex.css">
+    <link rel="stylesheet" href="../../css/analystyle/postUnusual.css">
+    <script src="../../js/echarts.min.js"></script>
+</head>
+<body>
+<div class="h-normIndex">
+    <div class="h-closetime"></div>
+    <div class="h-header">
+        <div
+                class="h-lhead"><s id="region"></s> <span class="base-iconone iconfont icon-xiala"></span> <i
+                class="fr">|</i></div>
+        <div class="h-chead"><s id="post"></s> <span class="base-icontwo iconfont icon-xiala"></span> <i class="fr">|
+        </i></div>
+        <div class="h-rhead"><s id="month"></s> <span class="base-iconthree iconfont icon-xiala"></span></div>
+    </div>
+    <div class="post-drop">
+        <div class="h-dropDown" id="droplDown">
+            <div class="h-frienDrop">
+                <div class="h-leftDrop"></div>
+                <div class="h-rightDrop"></div>
+            </div>
+            <div class="h-closedrop"></div>
+        </div>
+        <div class="base-dropDown" id="personnelDown">
+            <div class="base-frienDrop">
+                <div class="base-leftDrop"></div>
+                <div class="base-rightDrop"></div>
+            </div>
+            <div class="base-closedrop"></div>
+        </div>
+    </div>
+
+    <div class="h-bodys">
+        <div class="h-title">
+            在岗异常占比图
+        </div>
+        <div class="h-navs">
+            <p>在岗异常人数：<span id="y_totalNum">0</span> 在岗人数：<span id="n_totalNum">0</span></p>
+            <div class="h-twig" id="h-unusprog">
+                <div class="h-llwig">0%</div>
+                <div class="h-zlwig">0%</div>
+
+            </div>
+            <div class="h-chara">
+                <div class="h-lchar">
+                    <span></span>
+                    异常
+                </div>
+
+                <div class="h-rchar">
+                    <span></span>
+                    在岗
+                </div>
+            </div>
+        </div>
+        <div class="h-title">
+            在岗异常情况排名
+            <div class="h-posttime">
+                <span>在岗时长0-2小时 </span><i class="iconfont icon-xiala"></i>
+            </div>
+            <div class="h-timeShow">
+                <span> 0 小时</span>
+                <span>0-2小时</span>
+                <span>2-4小时</span>
+                <span>4-6小时</span>
+                <span>6-8小时</span>
+            </div>
+        </div>
+        <div class="h-normchart">
+            <div id="h-norchart"></div>
+            <div class="h-chara">
+                <div class="h-lchar">
+                    <span></span>
+                    告警
+                </div>
+                <div class="h-rchar">
+                    <span></span>
+                    正常
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/echarts.min.js"></script>
+<script src="../../js/jquery-2.1.0.min.js"></script>
+<script src="../../js/common.js"></script>
+
+<script src="../../js/api/api.common.js"></script>
+<script src="../../js/api/flowAnaly/postUnusual/api.post.unusual.js"></script>
+<script src="../../js/api/flowAnaly/postUnusual/api.post.unusual.callback.js"></script>
+<!-- 业务 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+//        getBasicInformation('postUnusualApi');
+        postUnusualApi();
+    });
+</script>
+
+<script>
+
+    $(".h-posttime").on("click", function () {
+        $(".h-timeShow").stop().fadeToggle();
+        $(".h-closetime").stop().fadeToggle();
+        $(".h-posttime .icon-xiala").toggleClass("icon-shangla");
+
+    })
+    $(".h-closetime").on("click", function () {
+        $(".h-timeShow").stop().fadeToggle();
+        $(".h-closetime").stop().fadeToggle();
+        $(".h-posttime .icon-xiala").toggleClass("icon-shangla");
+    })
+    $(".h-timeShow").on("click", "span", function () {
+        $(this).addClass("h-timeclick").siblings().removeClass("h-timeclick");
+        var index = $(this).index();
+        var txt = $(this).html();
+        console.log(txt);
+        $(".h-posttime span").html("在岗时长" + txt + " ");
+    })
+    //    var data = [
+    //        {
+    //            area: "东城区",
+    //            street: [
+    //                "安抚卫生服务而非",
+    //                "东方卫视的范围",
+    //                "单位埃尔文",
+    //                "是否为而服务",
+    //                "史蒂文安稳区分",
+    //                "是打发违法未放弃无符文",
+    //            ]
+    //        },
+    //        {
+    //            area: "西城区",
+    //            street: [
+    //                "大废物发生的访问法",
+    //                "的三分闻风丧胆访问方式的范围",
+    //                "大额我发的是访问",
+    //                "的身份无法飒飒的范围",
+    //                "的是否为发送到服务",
+    //                "的无法闻风丧胆",
+    //                "干妈风味发",
+    //                "大范围放弃违法",
+    //            ]
+    //        },
+    //        {
+    //            area: "海淀区",
+    //            street: [
+    //                "大师傅违法服务",
+    //                "是打发的范围",
+    //                "的萨芬违法的是否为",
+    //                "大访问方式的称为",
+    //                "是打发额无法为其",
+    //                "大富翁发大水发文",
+    //                "发vs方式单位房去重v中文网",
+    //                "大范围艾弗森的氛围",
+    //            ]
+    //        },
+    //        {
+    //            area: "朝阳区",
+    //            street: [
+    //                "大事发生的发问",
+    //                "大微风物权法",
+    //                "大访问方式的范围",
+    //                "是打发违法第三方",
+    //                "大废物发我",
+    //                "苏打粉无法的范围",
+    //                "大幅闻风丧胆",
+    //                "大闻风丧胆",
+    //            ]
+    //        },
+    //        {
+    //            area: "通州区",
+    //            street: [
+    //                "出vs打的娃儿",
+    //                "大范围放弃违法",
+    //                "大师傅为啥分",
+    //                "大富翁群二二群热无",
+    //                "大富翁群群二群二",
+    //                "大访问方式的范围",
+    //                "打发威锋网",
+    //                "大废物发斯蒂芬色",
+    //            ]
+    //        },
+    //        {
+    //            area: "昌平区",
+    //            street: [
+    //                "出vs打的娃儿",
+    //                "大范围放弃违法",
+    //                "大师傅为啥分",
+    //                "大富翁群二二群热无",
+    //                "大富翁群群二群二",
+    //                "大访问方式的范围",
+    //                "打发威锋网",
+    //                "大废物发斯蒂芬色",
+    //            ]
+    //        },
+    //        {
+    //            area: "大兴区",
+    //            street: [
+    //                "出vs打的娃儿",
+    //                "大范围放弃违法",
+    //                "大师傅为啥分",
+    //                "大富翁群二二群热无",
+    //                "大富翁群群二群二",
+    //                "大访问方式的范围",
+    //                "打发威锋网",
+    //                "大废物发斯蒂芬色",
+    //            ]
+    //        },
+    //    ];
+    //    var data1 = [
+    //        {
+    //            area: "装维人员",
+    //            street: [
+    //                "安抚卫生服务而非",
+    //                "东方卫视的范围",
+    //                "单位埃尔文",
+    //                "是否为而服务",
+    //                "史蒂文安稳区分",
+    //                "是打发违法未放弃无符文",
+    //            ]
+    //        },
+    //        {
+    //            area: "渠道人员",
+    //            street: [
+    //                "大废物发生的访问法",
+    //                "的三分闻风丧胆访问方式的范围",
+    //                "大额我发的是访问",
+    //                "的身份无法飒飒的范围",
+    //                "的是否为发送到服务",
+    //                "的无法闻风丧胆",
+    //                "干妈风味发",
+    //                "大范围放弃违法",
+    //            ]
+    //        },
+    //        {
+    //            area: "全部人员",
+    //            street: [
+    //                "大师傅违法服务",
+    //                "是打发的范围",
+    //                "的萨芬违法的是否为",
+    //                "大访问方式的称为",
+    //                "是打发额无法为其",
+    //                "大富翁发大水发文",
+    //                "发vs方式单位房去重v中文网",
+    //                "大范围艾弗森的氛围",
+    //            ]
+    //        }
+    //    ];
+    //    h_region(data1, {
+    //        overallId: "personnelDown", //点击弹出框的父盒子的ID名
+    //        developDrop: "h-header", //这是点击顶部信息弹出框的类名
+    //        developIcon: "h-chead",
+    //        leftDrop: "base-leftDrop", //左侧弹出的的类名  市区的类名
+    //        rightDrop: "base-rightDrop",//右侧弹出的类名  详情区域的类名
+    //        closeDrop: "base-closedrop" //关闭页面的类名  属于默认关闭搜索，只做关闭用
+    //    });
+    //    h_region(data, {
+    //        overallId: "droplDown", //点击弹出框的父盒子的ID名
+    //        developDrop: "h-header", //这是点击顶部信息弹出框的类名
+    //        developIcon: "h-lhead",
+    //        leftDrop: "h-leftDrop", //左侧弹出的的类名  市区的类名
+    //        rightDrop: "h-rightDrop",//右侧弹出的类名  详情区域的类名
+    //        closeDrop: "h-closedrop" //关闭页面的类名  属于默认关闭搜索，只做关闭用
+    //    });
+
+    h_scale({
+        idname: "h-unusprog",
+        leftname: "h-llwig",
+        centername: "h-zlwig",
+        lchar: 33,
+        zchar: 67
+    });
+
+    h_columar({
+        title: "离岗百分比",
+        idname: "h-norchart",
+        dataname: ["东城区", "东城区", "东城区", "东城区", "东城区"],
+        data: ["75", "30", "85", "49", "50"],
+        topdata: ["45", "135", "115", "30", "15"],
+        topshow: false,
+        nameone: "告警",
+        nametwo: "正常",
+        markpoint: [
+            {xAxis: 0, yAxis: 75 + 45},
+            {xAxis: 1, yAxis: 30 + 135},
+            {xAxis: 2, yAxis: 85 + 115},
+            {xAxis: 3, yAxis: 49 + 30},
+            {xAxis: 4, yAxis: 50 + 15},
+        ]
+    });
+    window.addEventListener("resize", function () {
+        h_columar({
+            title: "离岗百分比",
+            idname: "h-norchart",
+            dataname: ["高效", "勤奋", "普通", "低效", "慵懒"],
+            data: ["75", "30", "85", "49", "50"],
+            topdata: ["45", "135", "115", "30", "15"],
+            topshow: false,
+            nameone: "告警",
+            nametwo: "正常",
+            markpoint: [
+                {xAxis: 0, yAxis: 75 + 45},
+                {xAxis: 1, yAxis: 30 + 135},
+                {xAxis: 2, yAxis: 85 + 115},
+                {xAxis: 3, yAxis: 49 + 30},
+                {xAxis: 4, yAxis: 50 + 15},
+            ]
+        });
+
+
+        option.chart.resize();
+    });
+</script>
+</body>
+</html>

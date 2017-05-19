@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用功规范</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../../css/normstyle/normIndex.css">
+    <script src="../../js/echarts.min.js"></script>
+</head>
+<body>
+<div class="h-normIndex">
+    <div class="h-header">
+        <div class="h-lhead"><s id="city">北京市</s> <span class="iconfont icon-xiala"></span> <span class="fr">|</span></div>
+        <div class="h-chead">装维人员 <span class="iconfont icon-xiala"></span> <span class="fr">|</span></div>
+        <div class="h-rhead">2017.3 <span class="iconfont icon-xiala"></span></div>
+    </div>
+    <div class="h-dropDown">
+        <span class="iconfont icon-shangla"></span>
+        <div class="h-frienDrop">
+            <div class="h-leftDrop"></div>
+            <div class="h-rightDrop"></div>
+        </div>
+        <div class="h-closedrop"></div>
+    </div>
+    <div class="h-bodys">
+        <div class="h-title">
+            用工离岗整体占比图
+        </div>
+        <div class="h-navs">
+            <p>不规范人数：<span id="y_totalNum">0</span> 规范人数：<span id="n_totalNum">0</span></p>
+            <div class="h-twig" id="norm_leave_twig">
+                <div class="h-llwig">0%</div>
+                <div class="h-zlwig">0%</div>
+
+            </div>
+            <div class="h-chara">
+                <div class="h-lchar">
+                    <span></span>
+                    离岗
+                </div>
+
+                <div class="h-rchar">
+                    <span></span>
+                    稳定
+                </div>
+            </div>
+        </div>
+        <div class="h-title">
+            各地区用功离岗情况排名
+        </div>
+        <div class="h-normchart">
+
+            <div id="h-norchart"></div>
+            <div class="h-chara">
+                <div class="h-lchar">
+                    <span></span>
+                    告警
+                </div>
+                <div class="h-rchar">
+                    <span></span>
+                    正常
+                </div>
+                <div class="h-rmarkpoin">
+                    <span></span>
+                    区域总人数
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/echarts.min.js"></script>
+<script src="../../js/jquery-2.1.0.min.js"></script>
+<script src="../../js/common.js"></script>
+
+<script src="../../js/api/api.common.js"></script>
+<script src="../../js/api/norm/leave/api.leave.js"></script>
+<script src="../../js/api/norm/leave/api.leave.callback.js"></script>
+<!-- 业务 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        getBasicInformation('normLeaveApi');
+    });
+</script>
+
+<script>
+    h_region();
+
+    h_columar({
+        title: "离岗百分比",
+        idname: "h-norchart",
+        dataname: ["东城区", "东城区", "东城区", "东城区", "东城区"],
+        data: ["75", "30", "85", "49", "50"],
+        topdata: ["45", "135", "115", "30", "15"],
+        topshow: false,
+        nameone: "异常",
+        nametwo: "在岗",
+        markpoint: [
+            {xAxis: 0, yAxis: 75 + 45},
+            {xAxis: 1, yAxis: 30 + 135},
+            {xAxis: 2, yAxis: 85 + 115},
+            {xAxis: 3, yAxis: 49 + 30},
+            {xAxis: 4, yAxis: 50 + 15},
+        ]
+    });
+    window.addEventListener("resize", function () {
+        h_columar({
+            title: "离岗百分比",
+            idname: "h-norchart",
+            dataname: ["高效", "勤奋", "普通", "低效", "慵懒"],
+            data: ["75", "30", "85", "49", "50"],
+            topdata: ["45", "135", "115", "30", "15"],
+            topshow: false,
+            markpoint: [
+                {xAxis: 0, yAxis: 75 + 45},
+                {xAxis: 1, yAxis: 30 + 135},
+                {xAxis: 2, yAxis: 85 + 115},
+                {xAxis: 3, yAxis: 49 + 30},
+                {xAxis: 4, yAxis: 50 + 15},
+            ]
+        });
+
+
+        option.chart.resize();
+    });
+</script>
+</body>
+</html>

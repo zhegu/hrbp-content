@@ -1,0 +1,54 @@
+@import "../commonstyle/adaptr.css";
+@import "../commonstyle/base.css";
+@import "../commonstyle/iconfont.css";
+.h-normIndex .h-closetime {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 199;
+}
+.h-normIndex .h-bodys .h-title {
+  position: relative;
+}
+.h-normIndex .h-bodys .h-title .h-posttime {
+  display: inline-block;
+  float: right;
+}
+.h-normIndex .h-bodys .h-title .h-timeShow {
+  position: absolute;
+  width: 25rem;
+  height: 6.66666667rem;
+  background-color: #fff;
+  left: 0;
+  top: 2.9rem;
+  z-index: 200;
+  display: none;
+  padding-top: 0.66666667rem;
+}
+.h-normIndex .h-bodys .h-title .h-timeShow span {
+  display: block;
+  float: left;
+  width: 6rem;
+  height: 1.66666667rem;
+  line-height: 1.66666667rem;
+  text-align: center;
+  border: 1px dotted #979797;
+  margin: 0.66666667rem 0.66666667rem;
+}
+.h-normIndex .h-bodys .h-normchart {
+  position: relative;
+}
+.h-normIndex .h-bodys .h-normchart .h-markpoin {
+  position: absolute;
+  left: 15rem;
+  top: 1rem;
+}
+.h-normIndex .h-bodys .h-normchart .h-markpoin span {
+  color: #E66440;
+}
+.h-timeclick {
+  background-color: #E66440;
+  color: #ffffff;
+  border: 1px solid #E66440 !important;
+}

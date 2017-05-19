@@ -1,0 +1,101 @@
+@import "adaptr.css";
+@import "base.css";
+@import "iconfont.css";
+.h-normIndex .h-bodys .h-navs {
+  padding-top: 0.33333333rem;
+  padding-bottom: 1rem;
+  width: 20.53333333rem;
+  margin: 0 auto;
+  margin-bottom: 0.33333333rem;
+}
+.h-normIndex .h-bodys .h-navs p {
+  font-size: 0.8rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+.h-normIndex .h-bodys .h-navs p span {
+  color: #e66440;
+}
+.h-normIndex .h-bodys .h-navs .h-twig {
+  width: 20.53333333rem;
+  height: 1.83333333rem;
+  margin: 0 auto;
+  background-color: #F1F3F6;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0.33333333rem;
+}
+.h-normIndex .h-bodys .h-navs .h-twig div {
+  height: 1.16666667rem;
+  line-height: 1.16666667rem;
+  text-align: center;
+  color: #ffffff;
+  float: left;
+  font-size: 0.8rem;
+}
+.h-normIndex .h-bodys .h-navs .h-twig .h-ltwig {
+  background-color: #E66440;
+  border-radius: 0.83333333rem 0 0 0.83333333rem;
+}
+.h-normIndex .h-bodys .h-navs .h-twig .h-ztwig {
+  background-color: #3C424F;
+}
+.h-normIndex .h-bodys .h-navs .h-twig .h-rtwig {
+  background-color: #e6c1b7;
+  border-radius: 0 0.83333333rem 0.83333333rem 0;
+}
+.h-normIndex .h-bodys .h-navs .h-twig .h-llwig {
+  background-color: #E66440;
+  border-radius: 0.83333333rem 0 0 0.83333333rem;
+}
+.h-normIndex .h-bodys .h-navs .h-twig .h-zlwig {
+  background-color: #3C424F;
+  border-radius: 0 0.83333333rem 0.83333333rem 0;
+}
+.h-normIndex .h-bodys .h-navs .h-chara {
+  width: 20.46666667rem;
+  margin: 0 auto;
+  margin-top: 0.83333333rem;
+  height: 1rem;
+  line-height: 1rem;
+  display: flex;
+}
+.h-normIndex .h-bodys .h-navs .h-chara div {
+  flex: 1;
+  font-size: 0.7rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-indent: 0.16666667rem;
+}
+.h-normIndex .h-bodys .h-navs .h-chara div span {
+  display: block;
+  float: left;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.13333333rem;
+  margin-left: 0.06666667rem;
+  border-radius: 0.13333333rem;
+}
+.h-normIndex .h-bodys .h-navs .h-chara .h-lchar span {
+  background-color: #E66440;
+}
+.h-normIndex .h-bodys .h-navs .h-chara .h-zchar span {
+  background-color: #3C424F;
+}
+.h-normIndex .h-bodys .h-navs .h-chara .h-rchar span {
+  background-color: #e6c1b7;
+}
+.h-normIndex .h-bodys .h-navs .h-chara .h-rmarkpoin span {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-color: #3C424F;
+  border-radius: 68% 68% 0% 68%;
+  transform: rotate(43deg);
+}
+.h-normIndex .h-bodys .h-normchart #h-norchart {
+  width: 22.26666667rem;
+  height: 16.66666667rem;
+  margin: 0 auto;
+}

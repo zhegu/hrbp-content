@@ -1,0 +1,64 @@
+@import "../commonstyle/adaptr.css";
+@import "../commonstyle/base.css";
+@import "../commonstyle/iconfont.css";
+@import "../commonstyle/variable.less";
+
+.h-normIndex{
+  .h-closetime{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 199;
+  }
+  .h-bodys{
+    .h-title{
+      position: relative;
+      .h-posttime{
+        display: inline-block;
+        float: right;
+
+      }
+      .h-timeShow{
+        position: absolute;
+        width: 750/30rem;
+        height: 200/30rem;
+        background-color: #fff;
+        left:0;
+        top:87/30rem;
+        z-index: 200;
+        display: none;
+        padding-top: 20/30rem;
+        span{
+          display: block;
+          float: left;
+          width: 180/30rem;
+          height: 50/30rem;
+          line-height: 50/30rem;
+          text-align: center;
+          border: 1px dotted #979797;
+          margin: 20/30rem 20/30rem;
+        }
+      }
+    }
+
+    .h-normchart{
+      position: relative;
+      .h-markpoin{
+        position: absolute;
+        left: 450/30rem;
+        top: 30/30rem;
+        span{
+          color: @red;
+        }
+      }
+    }
+  }
+
+}
+
+.h-timeclick{
+  background-color: @red;
+  color: #ffffff;
+  border: 1px solid @red !important;
+}

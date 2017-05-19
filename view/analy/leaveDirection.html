@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>离职去向分析</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../../css/analystyle/leaveDirection.css"/>
+    <script src="../../js/echarts.min.js"></script>
+</head>
+<body>
+
+<div class="h-leave">
+    <div class="h-header">
+        <div class="h-lhead"><s id="city">北京市</s> <span class="iconfont icon-xiala"></span> <i class="fr">|</i></div>
+        <div class="h-chead">装维人员 <span class="iconfont icon-xiala"></span> <i class="fr">|</i></div>
+        <div class="h-rhead">2017.3 <span class="iconfont icon-xiala"></span></div>
+    </div>
+    <div class="post-drop">
+        <div class="h-dropDown" id="droplDown">
+            <span class="iconfont icon-shangla"></span>
+            <div class="h-frienDrop">
+                <div class="h-leftDrop"></div>
+                <div class="h-rightDrop"></div>
+            </div>
+            <div class="h-closedrop"></div>
+        </div>
+        <div class="base-dropDown" id="personnelDown">
+            <span class="iconfont icon-shangla"></span>
+            <div class="base-frienDrop">
+                <div class="base-leftDrop"></div>
+                <div class="base-rightDrop"></div>
+            </div>
+            <div class="base-closedrop"></div>
+        </div>
+    </div>
+    <div class="h-body">
+        <div class="h-title">
+            离职去向占比
+        </div>
+        <div class="h-navs">
+            <p>留在本地人数：<span id="y_totalNum">0</span> 去往外地人数：<span id="n_totalNum">0</span></p>
+            <div class="h-twig" id="leave_direction_twig">
+                <div class="h-llwig">0%</div>
+                <div class="h-zlwig">0%</div>
+
+            </div>
+            <div class="h-chara">
+                <div class="h-lchar">
+                    <span></span>
+                    本市
+                </div>
+
+                <div class="h-rchar">
+                    <span></span>
+                    其他
+                </div>
+            </div>
+        </div>
+        <div class="h-title">
+            离职去往城市占比
+        </div>
+        <div class="h-colum">
+            <div class="h-round">
+                <div id="h-ring"></div>
+                <div class="h-block">
+                    <div class="h-block1">
+                        <span></span>
+                        一线城市
+                    </div>
+                    <div class="h-block2">
+                        <span></span>
+                        二线城市
+                    </div>
+                    <div class="h-block3">
+                        <span></span>
+                        三线城市
+                    </div>
+                    <div class="h-block4">
+                        <span></span>
+                        四线城市
+                    </div>
+                    <div class="h-block5">
+                        <span></span>
+                        五线城市
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/jquery-2.1.0.min.js"></script>
+<script src="../../js/common.js"></script>
+
+<script src="../../js/api/api.common.js"></script>
+<script src="../../js/api/flowAnaly/leaveDirection/api.leave.direction.js"></script>
+<script src="../../js/api/flowAnaly/leaveDirection/api.leave.direction.callback.js"></script>
+<!-- 业务 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        getBasicInformation('leaveDirectionApi');
+    });
+</script>
+
+<script>
+
+    h_ring({
+        name : "h-ring",
+        data : [
+            {value : 18},
+            {value : 20},
+            {value : 7},
+            {value : 15},
+            {value : 40}
+        ],
+        color : [
+            "#e66440",
+            "#f2883b",
+            "#9aabd2",
+            "#68738c",
+            "#3c424f"
+        ]
+    });
+
+    window.addEventListener("resize", function () {
+        h_ring({
+            name : "h-ring",
+            data : [
+                {value : 18},
+                {value : 20},
+                {value : 7},
+                {value : 15},
+                {value : 40}
+            ],
+            color : [
+                "#e66440",
+                "#f2883b",
+                "#9aabd2",
+                "#68738c",
+                "#3c424f"
+            ]
+        });
+
+        option.chart.resize();
+    });
+</script>
+</body>
+</html>

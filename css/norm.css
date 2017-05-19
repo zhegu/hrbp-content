@@ -1,0 +1,102 @@
+@import "adaptr.css";
+@import "base.css";
+@import "iconfont.css";
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.h-complete {
+  height: 100%;
+  background-color: #F1F3F6;
+}
+.h-complete .h-norframe {
+  width: 100%;
+  height: 8.96666667rem;
+  background-color: #ffffff;
+  margin-bottom: 0.6rem;
+  margin: 0 auto;
+}
+.h-complete .h-norframe .h-normContent {
+  width: 19.73333333rem;
+  height: 6.33333333rem;
+  line-height: 2rem;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+.h-complete .h-norframe .h-normContent p {
+  text-align: center;
+  font-size: 1rem;
+  color: #222222;
+  padding-top: 1rem;
+  margin-bottom: 1.33333333rem;
+}
+.h-complete .h-norframe .h-normContent p span {
+  display: inline-block;
+  width: 6.3rem;
+  height: 0.33333333rem;
+  border-top: 1px solid #D7D7D7;
+}
+.h-complete .h-norframe .h-normContent .h-text {
+  width: 19.7rem;
+  height: 3.16666667rem;
+  margin: 0 auto;
+}
+.h-complete .h-norframe .h-normContent .h-text span {
+  display: block;
+  float: left;
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: Arial;
+  font-style: italic;
+}
+.h-complete .h-norframe .h-normContent .h-text a {
+  display: block;
+  float: left;
+}
+.h-complete .h-norframe .h-normContent .h-text a .h-twig {
+  width: 11.8rem;
+  height: 0.73333333rem;
+  margin: 0 auto;
+  background-color: #F1F3F6;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  float: left;
+  margin-top: 0.56666667rem;
+  margin-left: 2rem;
+  margin-right: 1.66666667rem;
+}
+.h-complete .h-norframe .h-normContent .h-text a .h-twig div {
+  height: 0.73333333rem;
+  line-height: 0.73333333rem;
+  text-align: center;
+  color: #ffffff;
+  float: left;
+  font-size: 0.8rem;
+}
+.h-complete .h-norframe .h-normContent .h-text a .h-twig .h-ltwig {
+  background-color: #E66440;
+}
+.h-complete .h-norframe .h-normContent .h-text a .h-twig .h-rtwig {
+  background-color: #3C424F;
+}
+.h-complete .h-norframe .h-normContent .h-text a span {
+  display: block;
+  float: left;
+  font-size: 1.33333333rem;
+  font-style: inherit;
+}
+.h-complete .h-norframe .h-normContent .h-text a p {
+  text-align: left;
+  margin: 0;
+  margin-top: -0.16666667rem;
+  font-size: 0.9rem;
+  color: #666666;
+  text-indent: 4.9rem;
+}
+.h-complete .h-norframe .h-normContent .h-thred {
+  width: 1.2rem;
+  height: 0.16666667rem;
+  border-bottom: 1px solid #D7D7D7;
+}

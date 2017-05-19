@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在岗异常识别</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../../css/normstyle/normIndex.css">
+    <link rel="stylesheet" href="../../css/analystyle/postUnusual.css">
+    <script src="../../js/echarts.min.js"></script>
+</head>
+<body>
+<div class="h-normIndex">
+    <div class="h-closetime"></div>
+    <div class="h-header">
+        <div class="h-lhead"><s id="city">北京市</s> <span class="iconfont icon-xiala"></span> <i class="fr">|</i></div>
+        <div class="h-chead">装维人员 <span class="iconfont icon-xiala"></span> <i class="fr">|</i></div>
+        <div class="h-rhead">2017.3 <span class="iconfont icon-xiala"></span></div>
+    </div>
+    <div class="post-drop">
+        <div class="h-dropDown" id="droplDown">
+            <div class="h-frienDrop">
+                <div class="h-leftDrop"></div>
+                <div class="h-rightDrop"></div>
+            </div>
+            <div class="h-closedrop"></div>
+        </div>
+        <div class="base-dropDown" id="personnelDown">
+            <div class="base-frienDrop">
+                <div class="base-leftDrop"></div>
+                <div class="base-rightDrop"></div>
+            </div>
+            <div class="base-closedrop"></div>
+        </div>
+    </div>
+    <div class="h-bodys">
+        <div class="h-title">
+            在岗异常占比图
+        </div>
+        <div class="h-navs">
+            <p>在岗异常人数：<span id="n_totalNum">0</span> 在岗人数：<span id="y_totalNum">0</span></p>
+            <div class="h-twig" id="h-unusprog">
+                <div class="h-llwig">0%</div>
+                <div class="h-zlwig">0%</div>
+
+            </div>
+            <div class="h-chara">
+                <div class="h-lchar">
+                    <span></span>
+                    异常
+                </div>
+
+                <div class="h-rchar">
+                    <span></span>
+                    在岗
+                </div>
+            </div>
+        </div>
+        <div class="h-title">
+            在岗异常情况排名
+
+        </div>
+        <div class="h-normchart">
+            <div class="h-markpoin">
+                <span>------</span>
+                预警值
+                <span id="warningValue"></span>
+            </div>
+            <div id="h-norchart"></div>
+            <div class="h-chara">
+                <div class="h-lchar">
+                    <span></span>
+                    告警
+                </div>
+                <div class="h-rchar">
+                    <span></span>
+                    正常
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/echarts.min.js"></script>
+<script src="../../js/jquery-2.1.0.min.js"></script>
+<script src="../../js/common.js"></script>
+
+<script src="../../js/api/api.common.js"></script>
+<script src="../../js/api/flowAnaly/jobChanges/api.job.changes.js"></script>
+<script src="../../js/api/flowAnaly/jobChanges/api.job.changes.callback.js"></script>
+<!-- 业务 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        getBasicInformation('jobChangesApi');
+    });
+</script>
+<script>
+
+    $(".h-posttime").on("click", function () {
+        $(".h-timeShow").stop().fadeToggle();
+        $(".h-closetime").stop().fadeToggle();
+        $(".h-posttime .icon-xiala").toggleClass("icon-shangla");
+
+    })
+    $(".h-closetime").on("click", function () {
+        $(".h-timeShow").stop().fadeToggle();
+        $(".h-closetime").stop().fadeToggle();
+        $(".h-posttime .icon-xiala").toggleClass("icon-shangla");
+    })
+    $(".h-timeShow").on("click", "span", function () {
+        $(this).addClass("h-timeclick").siblings().removeClass("h-timeclick");
+        var index = $(this).index();
+        var txt = $(this).html();
+        console.log(txt);
+        $(".h-posttime span").html("在岗时长" + txt + " ");
+    })
+
+    h_scale({
+        idname: "h-unusprog",
+        leftname: "h-llwig",
+        centername: "h-zlwig",
+        lchar: 33,
+        zchar: 67
+    });
+
+    h_columar({
+        title: "离岗百分比",
+        idname: "h-norchart",
+        dataname: ["东城区", "东城区", "东城区", "东城区", "东城区"],
+        data: ["75", "30", "85", "49", "50"],
+        topdata: ["45", "135", "115", "30", "15"],
+        topshow: false,
+        nameone: "告警",
+        nametwo: "正常",
+        markpoint: [
+            {xAxis: 0, yAxis: 75 + 45},
+            {xAxis: 1, yAxis: 30 + 135},
+            {xAxis: 2, yAxis: 85 + 115},
+            {xAxis: 3, yAxis: 49 + 30},
+            {xAxis: 4, yAxis: 50 + 15},
+        ]
+    });
+    window.addEventListener("resize", function () {
+        h_columar({
+            title: "离岗百分比",
+            idname: "h-norchart",
+            dataname: ["高效", "勤奋", "普通", "低效", "慵懒"],
+            data: ["75", "30", "85", "49", "50"],
+            topdata: ["45", "135", "115", "30", "15"],
+            topshow: false,
+            nameone: "告警",
+            nametwo: "正常",
+            markpoint: [
+                {xAxis: 0, yAxis: 75 + 45},
+                {xAxis: 1, yAxis: 30 + 135},
+                {xAxis: 2, yAxis: 85 + 115},
+                {xAxis: 3, yAxis: 49 + 30},
+                {xAxis: 4, yAxis: 50 + 15},
+            ]
+        });
+
+
+        option.chart.resize();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用功规范</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../../css/normstyle/norm.css">
+</head>
+<body>
+<div class="h-complete">
+    <div class="h-norframe">
+        <!--<div class="h-header">-->
+        <!--<a href="./normIndex.html">详情 <i>></i></a>-->
+        <!--</div>-->
+        <div class="h-normContent">
+            <p><span></span> 用工规范 <span></span></p>
+            <div class="h-text">
+                <span id="specification_index">0</span>
+                <a href="normIndex.html">
+                    <div class="h-twig">
+                        <div class="h-ltwig"></div>
+                        <div class="h-rtwig"></div>
+                    </div>
+                    <span class="h-skip iconfont icon-gengduo"></span>
+                    <p>用工规范指数</p>
+                </a>
+            </div>
+            <div class="h-thred"></div>
+        </div>
+
+    </div>
+    <div class="h-norframe">
+        <div class="h-normContent">
+            <p><span></span> 用工增岗 <span></span></p>
+            <div class="h-text">
+                <span id="zenggang_index">0</span>
+                <a href="normIncrease.html">
+                    <div class="h-twig">
+                        <div class="h-ltwig"></div>
+                        <div class="h-rtwig"></div>
+                    </div>
+                    <span class="h-skip iconfont icon-gengduo"></span>
+                    <p>用工增岗指数</p>
+                </a>
+            </div>
+            <div class="h-thred"></div>
+        </div>
+    </div>
+    <div class="h-norframe">
+
+        <div class="h-normContent">
+            <p><span></span> 用工离岗 <span></span></p>
+            <div class="h-text">
+                <span id="demobilized_index">0</span>
+                <a href="normLeave.html">
+                    <div class="h-twig">
+                        <div class="h-ltwig"></div>
+                        <div class="h-rtwig"></div>
+                    </div>
+                    <span class="h-skip iconfont icon-gengduo"></span>
+                    <p>用工离岗指数</p>
+                </a>
+            </div>
+            <div class="h-thred"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../js/jquery-2.1.0.min.js"></script>
+<script src="../../js/common.js"></script>
+<!-- 业务 -->
+<script src="../../js/api/api.common.js"></script>
+<script src="../../js/api/norm/api.norm.js"></script>
+<script src="../../js/api/norm/api.norm.callback.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        getBasicInformation('normApi');
+    });
+</script>
+</body>
+</html>

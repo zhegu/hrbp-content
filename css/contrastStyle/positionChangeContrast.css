@@ -1,0 +1,244 @@
+
+@import "../commonstyle/iconfont.css";
+@import "../commonstyle/variable.less";
+/*--------------头部导航--------------------*/
+.contrastList{
+    width:7.5rem;
+    height: 0.45rem;
+    margin-top:0.18rem;
+    margin-top:0.18rem;
+    font-size:0.24rem;
+    color: #666;
+    background:url("../../img/positionChangeContrast/contrastSwipeBg1.png") no-repeat left bottom ;
+    background-size:100%;
+}
+.contrastList .currentOption{
+    color: #E66440;
+}
+.contrastList li{
+    float: left;
+    width:2.47rem;
+    text-align: center;
+    height:0.35rem;
+    line-height:0.35rem;
+    border-right:0.01rem solid #666666;
+}
+
+/*-------添加显示模块-----------*/
+div.addAreaList{
+    top:2rem;
+}
+.addAreaList ul{
+    font-size: 0.22rem;
+    color: #666;
+    margin-left:-0.09rem;
+}
+.whiteBg{
+    background: #fff;
+    width: 6.14rem;
+    height: auto;
+    padding: 0rem 0.68rem 0.43rem;
+}
+#selectLeftArea,#selectRightArea,.addAreaList{
+    width:7.50rem;
+    height:10rem;
+    position: absolute;
+    top:0.9rem;
+    background-color:rgba(160,160,160,0.5);
+    display:none;
+    z-index:2;
+    color: #666;
+}
+.slide-dl #selectLeftArea,.slide-dl #selectRightArea{
+    display: none;
+    left: 0rem;
+    top:1.4rem;
+}
+.slide-dl-position{position: relative;}
+.selectAreaList ul,.addAreaList ul,dd{
+    overflow: hidden;
+}
+ .slide-dl .selectAreaList ul li,.addAreaList ul li{
+    background:#fff;
+    border:0.01rem dashed #666;
+}
+.slide-dl dd{
+    font-size: 0.22rem;
+    color: #fff;
+}
+.slide-dl ul li span{
+   margin-left: 0.2rem;
+}
+.selectAreaList ul li,.addAreaList ul li ,.slide-dl ul li{
+    width: 1.80rem;
+    text-align: center;
+    height: 0.48rem;
+    float: left;
+    line-height: 0.48rem;
+    margin-top:0.3rem;
+    margin-right: 0.29rem;
+}
+.slide-dl ul li{
+    background:#E66440;
+    border:0.01rem solid #E66440;
+}
+ul li.fgb-color{
+    background:#3c424f;
+    border-color:#3c424f;
+}
+.slide-dl ul li.addContrast{
+    background: #3c424f;
+    border-color:#3c424f;
+}
+.selectAreaList ul li:nth-child(3n),.addAreaList ul li:nth-child(3n),dd ul li:nth-child(3n){
+    margin-right: 0;
+}
+.selectAreaList .chooseTip,.addAreaList .chooseTip{
+    color:#cbcbcb;
+    font-size:0.24rem;
+}
+.loginBtn ,.btnOk{
+    text-align: center;
+    border-radius:0.06rem;
+}
+.btnOk{
+    color: #fff;
+    background: #E66440;
+    margin-top:0.5rem;
+    font-size:0.3rem;
+}
+/*分割线*/
+.splitLine-color{
+    color: #d7d7d7;
+    clear: both;
+    width: 6.10rem;
+    margin-left:0.62rem;
+}
+/*已选维度样式*/
+.slide-dl .selectAreaList ul .selectedList,.addAreaList ul .currentChoose,.addAreaList ul .selectedList{
+    background: #E66440;
+    color:#fff;
+    border:0.01rem solid #E66440;
+}
+
+
+.styled-select i{
+    font-style: normal;
+}
+.slide{
+    width:7.50rem;
+    /*height:13.14rem;*/
+}
+.slide-dl{
+    padding:0.28rem 0.6rem 0 ;
+}
+.slide dl dt{
+    width:6.9rem;
+    height:0.26rem;
+    color: #cbcbcb;
+    font-size:0.22rem;
+}
+.slide dl dd{
+  padding-bottom:0.18rem;
+}
+
+
+
+
+/*选择固定维度*/
+.styled-select{
+    font-size:0.2rem;
+
+}
+.slide-dl .marginLeft{
+    margin-left:1.68rem;
+}
+
+.fl{float: left}
+.fr{float: right}
+.styled-select {
+    width: 1.82rem;
+    height: 0.47rem;
+    float: left;
+    font-size: 0.22rem;
+    margin-top:0.32rem;
+    border: 0.01rem solid #E66440;
+    color: #6e6e6e;
+    padding-left:0.36rem;
+    line-height:0.47rem;
+}
+.styled-select span{
+    margin-left:0.1rem;
+}
+/*----------------------------------*/
+.grayLine{
+    clear: both;
+}
+
+
+/*选择固定维度*/
+.personStyle , .dataTime{
+    width:7.33rem;
+    height:1.53rem;
+    border: 0.08rem solid #dcdcdc;
+    float: left;
+    line-height: 1.53rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color:#787878;
+
+}
+.dataTime{
+    margin-left:4.4rem;
+}
+.splitModule{
+    background:#f1f3f6;
+    height:0.14rem;
+    width:7.5rem;
+    margin-top:0.29rem;
+}
+/*条柱形*/
+#columar-area{
+    width: 6.8rem;
+    height:4.04rem;
+    margin-left:0.6rem;
+}
+.ch_columar_title{
+    width: 7.5rem;
+    height:0.80rem;
+    margin:0 auto;
+    line-height:0.80rem;
+    text-align: center;
+    border-bottom: 0.02rem solid #ececec;
+    font-size: 0.24rem;
+    color: #222;
+    display: none;
+}
+
+.columar-tip{
+    float: left;
+    margin-left: 1rem;
+    margin-top:0rem;
+}
+.tipImg-abnormal ,.tipImg-normal{
+    display: inline-block;
+    width:0.25rem;
+    height:0.25rem;
+    border-radius:0.02rem;
+}
+.tipImg-abnormal{
+    background:#df5e39;
+}
+.tipImg-normal{
+    background:#3c424f;
+}
+.tip-describe{
+    color: #666;
+    font-size: 0.24rem;
+    display: inline-block;
+    /*margin-left: -0.4rem;*/
+    margin-top: -2.01rem;
+}
+.stationTitle,.titleTitle{
+    display: none;
+}

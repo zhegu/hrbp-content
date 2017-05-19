@@ -1,0 +1,42 @@
+@import "base.css";
+@import "iconfont.css";
+@media only screen and (width: 320px) {
+  html {
+    font-size: 12.8px;
+  }
+}
+@media only screen and (width: 375px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media only screen and (width: 400px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media only screen and (width: 414px) {
+  html {
+    font-size: 16.56px;
+  }
+}
+@media only screen and (min-width: 650px) {
+  html {
+    font-size: 30px;
+  }
+}
+.h-ensemble {
+  padding-top: 1.875rem;
+}
+.h-ensemble a {
+  display: block;
+  width: 17.1875rem;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  text-align: center;
+  color: #717171;
+  background-color: #d8d8d8;
+  font-size: 1rem;
+  border-radius: 0.1875rem;
+  margin: 1.86046512rem auto;
+}

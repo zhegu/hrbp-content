@@ -1,0 +1,454 @@
+@import "adaptr.css";
+@import "base.less";
+@import "variable.less";
+.container{
+  height: 1350/30rem;
+  overflow: hidden;
+  position: relative;
+  .h-titles {
+    width: 750/30rem;
+    height: 90/30rem;
+    line-height: 90/30rem;
+    border-bottom: 1px solid #eeeeee;
+    //margin: 0 auto;
+    text-align: center;
+    padding-top: 20/30rem;
+    i{
+      margin: 0 20/30rem;
+      font-style: inherit;
+    }
+    a{
+      height: 100%;
+      display: inline-block;
+      width: 200/30rem;
+    }
+    .h-analyse{
+      color: #0f0f0f;
+    }
+  }
+  .h-changehome{
+    width : 1500/30rem;
+    min-height: 850/30rem;
+    position: relative;
+  }
+  .h-person{  //这是地图的框
+    width: 750/30rem;
+    background-color: #fff;
+    border-radius: 8/30rem;
+    margin: 0 auto;
+    margin-bottom: 15/30rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    //float: left;
+
+    .h-navs{
+      padding-top: 10/30rem;
+      padding-bottom: 30/30rem;
+      width: 616/30rem;
+      margin: 0 auto;
+      margin-bottom: 10/30rem;
+      p{
+        color: #737373;
+        margin: 30/30rem 0;
+        text-align: center;
+      }
+      .h-twig{
+        width: 616/30rem;
+        height: 55/30rem;
+        margin: 0 auto;
+        background-color: @impression;
+        border-radius: 30/30rem;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 10/30rem;
+        div{
+          height: 35/30rem;
+          line-height: 35/30rem;
+          text-align: center;
+          color: #ffffff;
+          float: left;
+        }
+        .h-ltwig{
+          //width: 33%;
+          background-color: @red;
+          border-radius: 25/30rem 0 0 25/30rem;
+        }
+        .h-ztwig{
+          //width: 17%;
+          background-color: @accist;
+        }
+        .h-rtwig{
+          //width: 50%;
+          background-color: #d8d8d8;
+          border-radius: 0 25/30rem 25/30rem 0;
+        }
+        //这是用工离岗的css
+        .h-ltwig{
+          //width: 33%;
+          background-color: @red;
+          border-radius: 25/30rem 0 0 25/30rem;
+        }
+        .h-rtwig{
+          //width: 67%;
+          background-color: @accist;
+          border-radius: 0 25/30rem 25/30rem 0;
+        }
+      }
+      .h-chara{
+        width : 614/30rem;
+        margin: 0 auto;
+        margin-top: 25/30rem;
+        height: 1rem;
+        line-height: 1rem;
+        display: flex;
+        div{
+          flex: 1;
+          color: #737373;
+          font-size: 0.7rem;
+          height: 1rem;
+          line-height: 1rem;
+          text-indent: 5/30rem;
+          span{
+            display: block;
+            float: left;
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-top: 4/30rem;
+            margin-left: 2/30rem;
+            border-radius: 4/30rem;
+          }
+        }
+        .h-lchar{
+          span{
+            background-color: @red;
+          }
+        }
+        .h-zchar{
+          span{
+            background-color: @accist;
+          }
+        }
+        .h-rchar{
+          span{
+            background-color: #d8d8d8;
+          }
+        }
+      }
+    }
+
+    .h-analyse{
+      padding-top: 10/30rem;
+      padding-bottom: 30/30rem;
+      width: 616/30rem;
+      margin: 0 auto;
+      margin-bottom: 10/30rem;
+      p{
+        color: #797979;
+        font-size: 1rem;
+        margin: 30/30rem 0;
+        text-align: center;
+      }
+      .h-twig{
+        width: 616/30rem;
+        height: 55/30rem;
+        margin: 0 auto;
+        background-color: #f1f3f6;
+        border-radius: 30/30rem;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 10/30rem;
+        div{
+          height: 35/30rem;
+          line-height: 35/30rem;
+          text-align: center;
+          color: #ffffff;
+          float: left;
+        }
+        .h-ltwig{
+          //width: 33%;
+          background-color: @red;
+          border-radius: 25/30rem 0 0 25/30rem;
+        }
+        .h-ztwig{
+          //width: 17%;
+          background-color: @accist;
+        }
+        .h-rtwig{
+          //width: 50%;
+          background-color: #d8d8d8;
+          border-radius: 0 25/30rem 25/30rem 0;
+        }
+        //这是用工离岗的css
+        .h-llwig{
+          //width: 33%;
+          background-color: @red;
+          border-radius: 25/30rem 0 0 25/30rem;
+        }
+        .h-zlwig{
+          //width: 67%;
+          background-color: @accist;
+          border-radius: 0 25/30rem 25/30rem 0;
+        }
+      }
+      .h-chara{
+        width : 614/30rem;
+        margin: 0 auto;
+        margin-top: 25/30rem;
+        height: 1rem;
+        line-height: 1rem;
+        display: flex;
+        div{
+          flex: 1;
+          color: #737373;
+          height: 1rem;
+          line-height: 1rem;
+          text-indent: 5/30rem;
+          span{
+            display: block;
+            float: left;
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-top: 4/30rem;
+            margin-left: 2/30rem;
+            border-radius: 4/30rem;
+          }
+        }
+        .h-lchar{
+          span{
+            background-color: @red;
+          }
+        }
+        .h-zchar{
+          span{
+            background-color: @accist;
+          }
+        }
+        .h-rchar{
+          span{
+            background-color: #d8d8d8;
+          }
+        }
+      }
+    }
+  }
+  #container{
+    height: 674/30rem;
+    width: 655/30rem;
+    margin: 20/30rem auto;
+    border-radius: 10/30rem;
+  }
+
+
+
+
+  .h-potency{ //这是柱状图的框
+    //float: left;
+    width: 750/30rem;
+    position: absolute;
+    top: 0;
+    left: 750/30rem;
+    .h-mapchart{
+      position: relative;
+      .h-markpoin{
+        position: absolute;
+        left: 450/30rem;
+        top: 30/30rem;
+        color: #666666;
+        span{
+          display: inline-block;
+          width: 30/30rem;
+          height: 30/30rem;
+          background-color: @accist;
+          border-radius: 68% 68% 0% 68%;
+          transform: rotate(43deg);
+        }
+      }
+    }
+    #h-jobpote{
+      width: 676/30rem;
+      height: 600/30rem;
+      margin: 0 auto;
+    }
+
+    .h-ecplan{
+      width: 560/30rem;
+      margin: 0 auto;
+      padding-top: 20/30rem;
+      p{
+        color: #737373;
+        line-height: 1.2rem;
+      }
+    }
+  }
+
+  .h-popframe{
+    width: 750/30rem;
+    height: 100%;
+    min-height: 1280/30rem;
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 0;
+    padding-top: 80/30rem;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+
+    .h-frame{
+      width: 566/30rem;
+      min-height: 800/30rem;
+      background-color: #fff;
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding-top: 102/30rem;
+      position: relative;
+      top: 148/30rem;
+      border-radius: 5%;
+      box-shadow: 3px 3px 3px;
+      z-index: 210;
+      .h-popheads{
+        width: 338/30rem;
+        height: 218/30rem;
+        position: absolute;
+        background: url("../img/Group 45.png") no-repeat;
+        background-size: 100% 100%;
+        left:137/30rem;
+        top: -125.2/30rem;
+        z-index: 210;
+        color: #ffffff;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 24/30rem;
+        text-indent: -36/30rem;
+        p{
+          font-size: 1.1rem;
+          color: #ffffff;
+          line-height: 0.9rem;
+          margin: 35/30rem 0;
+        }
+        .h-poptexts{
+          font-size: 1.7rem;
+          font-weight: 600;
+        }
+      }
+      .h-avatar{
+        width: 505/30rem;
+        //height: 470/30rem;
+        background-color: #222833;
+        border-radius: 5%;
+        box-sizing: border-box;
+        padding: 10/30rem;
+        overflow: hidden;
+        margin: 0 auto;
+        p{
+          margin: 20/30rem 0;
+          white-space:nowrap;
+          color: #ffffff;
+          width: 100%;
+          span{
+            display: inline-block;
+            width: 245/30rem;
+            color: #ffffff !important;
+          }
+        }
+        .h-textarea{
+          line-height: 1.7;
+          white-space: normal;
+        }
+      }
+
+      .h-navs{
+        padding-top: 10/30rem;
+        padding-bottom: 30/30rem;
+        width: 566/30rem;
+        margin: 0 auto;
+        margin-bottom: 10/30rem;
+        p{
+          text-align: center;
+          line-height: 0.8rem;
+        }
+        .h-sacle{
+          width: 504/30rem;
+          height: 50/30rem;
+          line-height: 50/30rem;
+          margin: 0 auto;
+          margin-top: -10/30rem;
+          span{
+            display: inline-block;
+            text-align: center;
+            float: left;
+          }
+          .h-llwig{
+            width: 26%;
+          }
+          .h-zlwig{
+            width: 74%;
+          }
+        }
+        .h-twig{
+          width: 504/30rem;
+          height: 36/30rem;
+          margin: 0 auto;
+          background-color: @impression;
+          border-radius: 30/30rem;
+          overflow: hidden;
+          box-sizing: border-box;
+          padding: 7/30rem;
+          div{
+            height: 22/30rem;
+            line-height: 35/30rem;
+            text-align: center;
+            color: #ffffff;
+            float: left;
+            font-size: 0.8rem;
+          }
+          //这是用工离岗的css
+          .h-llwig{
+            //width: 26%;
+            background-color: @red;
+            border-radius: 25/30rem 0 0 25/30rem;
+          }
+          .h-zlwig{
+            //width: 74%;
+            background-color: @accist;
+            border-radius: 0 25/30rem 25/30rem 0;
+          }
+        }
+        .h-chara{
+          width: 491/30rem;
+          margin: 15/30rem auto;
+        }
+      }
+    }
+    .h-closetwo{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 205;
+      top: 0;
+      left: 0;
+      overflow: auto;
+    }
+    .h-close{
+      height: 1rem;
+      line-height: 1rem;
+      text-align: center;
+      margin: 20/30rem auto;
+      padding-top: 190/30rem;
+      span{
+        width: 1.5rem;
+        height: 1.5rem;
+        display: inline-block;
+        background-color: #fff;
+        margin: 0 auto;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height:1.5rem;
+      }
+    }
+  }
+}
+
+

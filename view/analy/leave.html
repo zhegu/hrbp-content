@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>离职识别分辨</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../../css/analystyle/leave.css"/>
+    <script src="../../js/echarts.min.js"></script>
+</head>
+<body>
+<!--<div class="h-unusual">-->
+<!---->
+<!--</div>-->
+<div class="h-leave">
+    <div class="h-header">
+        <div class="h-lhead"><s id="city">北京市</s> <span class="iconfont icon-xiala"></span> <i class="fr">|</i></div>
+        <div class="h-chead">装维人员 <span class="iconfont icon-xiala"></span> <i class="fr">|</i></div>
+        <div class="h-rhead">2017.3 <span class="iconfont icon-xiala"></span></div>
+    </div>
+    <div class="post-drop">
+        <div class="h-dropDown" id="droplDown">
+            <span class="iconfont icon-shangla"></span>
+            <div class="h-frienDrop">
+                <div class="h-leftDrop"></div>
+                <div class="h-rightDrop"></div>
+            </div>
+            <div class="h-closedrop"></div>
+        </div>
+        <div class="base-dropDown" id="personnelDown">
+            <span class="iconfont icon-shangla"></span>
+            <div class="base-frienDrop">
+                <div class="base-leftDrop"></div>
+                <div class="base-rightDrop"></div>
+            </div>
+            <div class="base-closedrop"></div>
+        </div>
+    </div>
+    <div class="h-body">
+        <div class="h-title">
+            离职概率占比
+        </div>
+        <div class="h-round">
+            <div id="h-ring"></div>
+            <div class="h-block">
+                <div class="h-block1">
+                    <span></span>
+                    离职率高
+                </div>
+                <div class="h-block2">
+                    <span></span>
+                    离职概率居中
+                </div>
+                <div class="h-block3">
+                    <span></span>
+                    离职概率较低
+                </div>
+                <div class="h-block4">
+                    <span></span>
+                    无离职倾向人员
+                </div>
+            </div>
+        </div>
+        <div class="h-title">
+            离职岗位热度排名
+        </div>
+        <div class="h-colum">
+            <div id="h-columnar"></div>
+            <div class="h-chara">
+                <div class="h-lchar">
+                    <span></span>
+                    告警
+                </div>
+                <div class="h-rchar">
+                    <span></span>
+                    正常
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/jquery-2.1.0.min.js"></script>
+<script src="../../js/common.js"></script>
+
+<script src="../../js/api/api.common.js"></script>
+<script src="../../js/api/flowAnaly/leave/api.leave.js"></script>
+<script src="../../js/api/flowAnaly/leave/api.leave.callback.js"></script>
+<!-- 业务 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        getBasicInformation('leaveApi');
+    });
+</script>
+
+<script>
+    h_ring({
+        name: "h-ring",
+        data: [
+            {value: 25},
+            {value: 25},
+            {value: 25},
+            {value: 25}
+        ]
+    });
+    h_columar({
+        title: "增岗百分比",
+        idname: "h-columnar",
+        dataname: ["东城区", "东城区", "东城区", "东城区", "东城区"],
+        data: ["75", "30", "85", "49", "50"],
+        topdata: ["45", "135", "115", "30", "15"],
+        topshow: false,
+        nameone: "告警",
+        nametwo: "正常",
+        markpoint: [
+            {xAxis: 0, yAxis: 75 + 45},
+            {xAxis: 1, yAxis: 30 + 135},
+            {xAxis: 2, yAxis: 85 + 115},
+            {xAxis: 3, yAxis: 49 + 30},
+            {xAxis: 4, yAxis: 50 + 15},
+        ]
+    });
+
+    window.addEventListener("resize", function () {
+        h_ring({
+            name: "h-ring",
+            data: [
+                {value: 25},
+                {value: 25},
+                {value: 25},
+                {value: 25}
+            ]
+        });
+
+        h_columar({
+            title: "增岗百分比",
+            idname: "h-columnar",
+            dataname: ["高效", "勤奋", "普通", "低效", "慵懒"],
+            data: ["75", "30", "85", "49", "50"],
+            topdata: ["45", "135", "115", "30", "15"],
+            topshow: false,
+            nameone: "告警",
+            nametwo: "正常",
+            markpoint: [
+                {xAxis: 0, yAxis: 75 + 45},
+                {xAxis: 1, yAxis: 30 + 135},
+                {xAxis: 2, yAxis: 85 + 115},
+                {xAxis: 3, yAxis: 49 + 30},
+                {xAxis: 4, yAxis: 50 + 15},
+            ]
+        });
+
+
+        option.chart.resize();
+    });
+</script>
+</body>
+</html>

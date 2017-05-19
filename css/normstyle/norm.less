@@ -1,0 +1,108 @@
+@import "../commonstyle/adaptr.css";
+@import "../commonstyle/base.css";
+@import "../commonstyle/iconfont.css";
+@import "../commonstyle/variable.less";
+html,body{
+  width: 100%;
+  height: 100%;
+}
+.h-complete{
+  height: 100%;
+  background-color: @impression;
+  .h-norframe{
+    width: 100%;
+    height: 269/30rem;
+    background-color: #ffffff;
+    margin-bottom: 18/30rem;
+    margin: 0 auto;
+    //margin-top: 10/30rem;
+
+    .h-normContent{
+      width: 592/30rem;
+      height: 190/30rem;
+      line-height: 60/30rem;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      p{
+        text-align: center;
+        font-size: 1rem;
+        color: @black;
+        padding-top: 30/30rem;
+        margin-bottom: 40/30rem;
+        span{
+          display: inline-block;
+          width: 189/30rem;
+          height: 10/30rem;
+          border-top: 1px solid @cutapart;
+        }
+      }
+
+      .h-text{
+        width: 591/30rem;
+        height: 95/30rem;
+        margin: 0 auto;
+        span{
+          display: block;
+          float: left;
+          font-size: 2.5rem;
+          font-weight: 600;
+          font-family: Arial;
+          font-style: italic;
+        }
+        a{
+          display: block;
+          float: left;
+          .h-twig{
+            width: 354/30rem;
+            height: 22/30rem;
+            margin: 0 auto;
+            background-color: @impression;
+            border-radius: 30/30rem;
+            overflow: hidden;
+            box-sizing: border-box;
+            float: left;
+            margin-top: 17/30rem;
+            margin-left: 60/30rem;
+            margin-right: 50/30rem;
+            div{
+              height: 22/30rem;
+              line-height: 22/30rem;
+              text-align: center;
+              color: #ffffff;
+              float: left;
+              font-size: 0.8rem;
+            }
+            .h-ltwig{
+              //width: 78%;
+              background-color: @red;
+            }
+            .h-rtwig{
+              //width: 22%;
+              background-color: @accist;
+            }
+          }
+          span{
+            display: block;
+            float: left;
+            font-size: 40/30rem;
+            font-style: inherit;
+          }
+          p{
+            text-align: left;
+            margin: 0;
+            margin-top: -5/30rem;
+            font-size: 0.9rem;
+            color: @textcolor;
+            text-indent: 147/30rem;
+          }
+        }
+      }
+      .h-thred{
+        width: 36/30rem;
+        height: 5/30rem;
+        border-bottom: 1px solid @cutapart;
+      }
+    }
+
+  }
+}
