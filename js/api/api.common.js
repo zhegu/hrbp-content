@@ -306,7 +306,7 @@ function getAreaAndGridAndPostName(json) {
  */
 function getRProportion(y_proportion, n_proportion) {
     var r_proportion = 0;
-    if (null != y_proportion && null != n_totalNum) {
+    if (null != y_proportion && null != n_proportion) {
         r_proportion = 100 - (Number(y_proportion) + Number(n_proportion));
     }
     return r_proportion;
