@@ -310,6 +310,7 @@ function getRProportion(y_proportion, n_proportion) {
         r_proportion = 100 - (Number(y_proportion) + Number(n_proportion));
     }
     return r_proportion;
+
 }
 
 function getToday(str) {

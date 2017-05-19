@@ -6,6 +6,7 @@ function cbSpecificationIndex(json) {
             $('#specification_index').html(item.index);
             alert(item.index);
             alert(getRProportion(item.index, 0));
+
             scaleMap2('norm_index_twig', 'h-ltwig', 'h-rtwig', item.index, getRProportion(item.index, 0));
         })
         zengGangIndex();
