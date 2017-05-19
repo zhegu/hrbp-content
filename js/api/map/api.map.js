@@ -1,5 +1,6 @@
 function mapApi(json) {
-    CTSI_API_JSON = json;
+
+    CTSI_API_JSON = JSON.parse(json);
     empInPostSummary();
 }
 
