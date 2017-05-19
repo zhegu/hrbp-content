@@ -1,4 +1,4 @@
-var projectDomain = 'www.ixiaoru.com/bigdata-hrbp-service';
+var projectDomain = 'https://www.ixiaoru.com/bigdata-hrbp-service';
 var DATE_YYYYMMDD = 'yyyyMMdd';
 var DATE_MONTH_YYYYMM = 'yyyyMM'
 var CTSI_API_JSON;
@@ -59,6 +59,51 @@ function changeColumar(id, dataName, data, topData) {
         dataname: dataName,
         leftData: data,
         rightData: topData,
+        splitArea: true,
+        topshow: false,
+        nameone: "异常",
+        nametwo: "在岗",
+    });
+}
+
+/**
+ * 柱状图-多柱.
+ *
+ * @param id
+ * @param dataName
+ * @param data
+ * @param topData
+ */
+function changeColumar3(id, dataName, data, topData, data3) {
+    columnar({
+        idname: id,
+        dataname: dataName,
+        leftData: data,
+        rightData: topData,
+        threeData: data3,
+        splitArea: true,
+        topshow: false,
+        nameone: "异常",
+        nametwo: "在岗",
+    });
+}
+/**
+ * 柱状图-多柱.
+ *
+ * @param id
+ * @param dataName
+ * @param data
+ * @param topData
+ */
+function changeColumar5(id, dataName, data, topData,data3,data4,data5) {
+    columnar({
+        idname: id,
+        dataname: dataName,
+        leftData: data,
+        rightData: topData,
+        threeData: data3,
+        fourData: data4,
+        fiveData: data5,
         splitArea: true,
         topshow: false,
         nameone: "异常",
@@ -417,6 +462,99 @@ function getRegionByRegion2(region2) {
         }
     })
 }
-function checkContrastRegionBy() {
-    
+function checkContrastRegionByPermission(region) {
+    var obj = new Object();
+    obj.province = CTSI_API_JSON.baseInfo.province;
+
+    var objTmp = getRegionByRegion2(region);
+    if (CTSI_API_JSON.baseInfo.userMaxPermission == 1) { // 省-比较区域是-市
+        obj.city = region;
+    }
+    if (CTSI_API_JSON.baseInfo.userMaxPermission == 2) { // 市-比较区域是-区县
+        obj.city = objTmp.region1;
+        obj.district = region;
+    }
+    if (CTSI_API_JSON.baseInfo.userMaxPermission == 3 || CTSI_API_JSON.baseInfo.userMaxPermission == 4) { // 区县-比较区域是-街道
+        obj.city = CTSI_API_JSON.baseInfo.city;
+        obj.district = objTmp.region1;
+        obj.street = region;
+    }
+    if (CTSI_API_JSON.baseInfo.userMaxPermission == 5) { // 网格-比较区域是-网格（网格不为空：省、市区、县、街道都不能为空）
+        obj.city = CTSI_API_JSON.baseInfo.city;
+        obj.district = CTSI_API_JSON.baseInfo.district;
+        obj.street = CTSI_API_JSON.baseInfo.street;
+        obj.city = region;
+    }
+    return obj;
+}
+
+function getContrastAreaArray(type, region) {
+    if (type == 1) {
+        var regionStr = null;
+        var regionStrTmp = null;
+        $.each(region, function (i, item) {
+            if (null != regionStr) {
+                regionStr += "," + item;
+            } else {
+                regionStr = item;
+                regionStrTmp = item;
+            }
+        })
+        return checkContrastRegionByPermission(regionStrTmp);
+    } else {
+        return checkContrastRegionByPermission(region);
+    }
+}
+
+function getContrastPostArray(type, post) {
+    var postStr = null;
+    if (type == 2) {
+        $.each(post, function (i, item) {
+            if (null != postStr) {
+                postStr += "," + item;
+            } else {
+                postStr = item;
+            }
+        })
+    } else {
+        postStr = post;
+    }
+    return postStr;
+}
+
+function getContrastMonthArray(type, month) {
+    var monthStr = null;
+    if (type == 3) {
+        $.each(month, function (i, item) {
+            if (null != monthStr) {
+                monthStr += "," + item;
+            } else {
+                monthStr = item;
+            }
+        })
+    } else {
+        monthStr = month;
+    }
+    return monthStr;
+}
+
+function getContrastCompareTypeByType(type) {
+    if (type == 1) {
+        // 区域对比的数据是：当前区域信息中的第二级数据.
+        if (CTSI_API_JSON.baseInfo.userMaxPermission == 1) {
+            return 'city';
+        }
+        if (CTSI_API_JSON.baseInfo.userMaxPermission == 2) {
+            return 'district';
+        }
+        if (CTSI_API_JSON.baseInfo.userMaxPermission == 3 || CTSI_API_JSON.baseInfo.userMaxPermission == 4) {
+            return 'street';
+        }
+    }
+    if (type == 2) {
+        return 'post';
+    }
+    if (type == 3) {
+        return 'date';
+    }
 }

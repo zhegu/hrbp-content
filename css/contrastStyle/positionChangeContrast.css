@@ -202,6 +202,7 @@ ul li.fgb-color{
     width: 6.8rem;
     height:4.04rem;
     margin-left:0.6rem;
+    display: none;
 }
 .ch_columar_title{
     width: 7.5rem;
@@ -219,6 +220,7 @@ ul li.fgb-color{
     float: left;
     margin-left: 1rem;
     margin-top:0rem;
+    display: none;
 }
 .tipImg-abnormal ,.tipImg-normal{
     display: inline-block;

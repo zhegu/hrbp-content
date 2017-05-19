@@ -1,4 +1,7 @@
 function cbWorkersDemobilizedProportion(json) {
+
+    alert('cbWorkersDemobilizedProportion');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var y_proportion = 0;
         var n_proportion = 0;
@@ -23,6 +26,9 @@ function cbWorkersDemobilizedProportion(json) {
 }
 
 function cbRegionWorkersDemobilizedRanking(json) {
+
+    alert('cbRegionWorkersDemobilizedRanking');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var dataName = new Array();
         var data = new Array();

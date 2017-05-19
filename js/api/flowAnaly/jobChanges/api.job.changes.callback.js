@@ -1,4 +1,7 @@
 function cbPositionChangeWhole(json) {
+
+    alert('cbPositionChangeWhole');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var y_proportion = 0;
         var n_proportion = 0;
@@ -23,6 +26,9 @@ function cbPositionChangeWhole(json) {
 }
 
 function cbRegionPostChange(json) {
+
+    alert('cbRegionPostChange');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var dataName = new Array();
         var data = new Array();

@@ -1,4 +1,7 @@
 function cbEmpDimissionWhereabouts(json) {
+
+    alert('cbEmpDimissionWhereabouts');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var y_proportion = 0;
         var n_proportion = 0;
@@ -26,6 +29,9 @@ function cbEmpDimissionWhereabouts(json) {
 }
 
 function cbEmpDimissionCityDetails(json) {
+
+    alert('cbEmpDimissionCityDetails');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var v1 = 0;
         var v2 = 0;

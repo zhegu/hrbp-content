@@ -1,6 +1,9 @@
 var map_obj = null;
 
 function cbEmpInPostSummary(json) {
+    alert('cbEmpInPostSummary');
+    alert(json);
+
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var lchar = 0;
         var zchar = 0;
@@ -27,6 +30,9 @@ function cbEmpInPostSummary(json) {
 }
 
 function cbPostInfoOverview(json) {
+
+    alert('cbPostInfoOverview');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         $.each(json.data, function (i, item) {
             // TODO 怎样调用showMap方法.
@@ -51,6 +57,9 @@ function cbPostInfoOverview(json) {
 }
 
 function cbEmpInPostAbnormalCauseAnalysis(json) {
+
+    alert('cbEmpInPostAbnormalCauseAnalysis');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var lchar = 0;
         var zchar = 0;
@@ -80,6 +89,9 @@ function cbEmpInPostAbnormalCauseAnalysis(json) {
 }
 
 function cbViewEmpDetails(json) {
+
+    alert('cbViewEmpDetails');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         $.each(cb.data, function (i, item) {
             $('#detail_postName').html(item.postName);// 岗位	postName	必填	String
@@ -95,6 +107,9 @@ function cbViewEmpDetails(json) {
 }
 
 function cbEmpWorkEfficiencyPercentage(json) {
+
+    alert('cbEmpWorkEfficiencyPercentage');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var dataname = new Array();
         var data = new Array();
@@ -111,6 +126,9 @@ function cbEmpWorkEfficiencyPercentage(json) {
 }
 
 function cbPostInfoOverviewPng(json) {
+
+    alert('cbPostInfoOverviewPng');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json)) {
         // TODO 返回的图片怎么用.
         json.path; // 图片地址	path	必填	string	base64.

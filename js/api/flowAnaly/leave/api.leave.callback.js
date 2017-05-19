@@ -1,4 +1,7 @@
 function cbEmpDimissionProportion(json) {
+
+    alert('cbEmpDimissionProportion');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var v1 = 0;
         var v2 = 0;
@@ -30,6 +33,9 @@ function cbEmpDimissionProportion(json) {
 }
 
 function cbEmpDimissionInclination(json) {
+
+    alert('cbEmpDimissionInclination');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var dataName = new Array();
         var data = new Array();

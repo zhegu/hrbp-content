@@ -1,4 +1,7 @@
 function cbSpecificationIndex(json) {
+
+    alert('cbSpecificationIndex');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         $.each(json.data, function (i, item) {
             $('#specification_index').html(item.index);
@@ -10,6 +13,9 @@ function cbSpecificationIndex(json) {
 }
 
 function cbZengGangIndex(json) {
+
+    alert('cbZengGangIndex');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         $.each(json.data, function (i, item) {
             $('#zenggang_index').html(item.index);
@@ -21,6 +27,9 @@ function cbZengGangIndex(json) {
 }
 
 function cbDemobilizedIndex(json) {
+
+    alert('cbDemobilizedIndex');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         $.each(json.data, function (i, item) {
             $('#demobilized_index').html(item.index);

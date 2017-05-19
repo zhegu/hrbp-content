@@ -1,4 +1,7 @@
 function cbWorkersZengGangProportion(json) {
+
+    alert('cbWorkersZengGangProportion');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var y_proportion = 0;
         var n_proportion = 0;
@@ -23,6 +26,9 @@ function cbWorkersZengGangProportion(json) {
 }
 
 function cbRegionWorkersZengGangRanking(json) {
+
+    alert('cbRegionWorkersZengGangRanking');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var dataName = new Array();
         var data = new Array();

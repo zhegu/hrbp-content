@@ -20,6 +20,9 @@
 // }
 
 function cbEmpSpecification(json) {
+
+    alert('cbEmpSpecification');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var y_proportion;
         var n_proportion;
@@ -56,6 +59,9 @@ function cbEmpSpecification(json) {
 }
 
 function cbRegionSpecificationRanking(json) {
+
+    alert('cbRegionSpecificationRanking');
+    alert(json);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var dataName = new Array();
         var data = new Array();
