@@ -4,11 +4,9 @@ function cbEmpInPostSummary(json) {
 
     alert('cbEmpInPostSummary');
     alert(json);
-    alert(JSON.parse(json));
-    json = JSON.parse(json);
-    alert(json);
-    alert('----------------------');
-
+    alert(checkCallBackJsonIsNotNull(json));
+    alert(checkJsonDateIsNotNull(json.data));
+    alert(json.data.inPostYesRate);
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var lchar = 0;
         var zchar = 0;
