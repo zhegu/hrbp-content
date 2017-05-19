@@ -1,6 +1,9 @@
 var map_obj = null;
 
 function cbEmpInPostSummary(json) {
+
+    json = JSON.parse(json);
+
     alert('cbEmpInPostSummary');
     alert(json);
 
@@ -47,6 +50,7 @@ function cbPostInfoOverview(json) {
 
             // map_obj.XXXX = '';
         })
+
         // TODO 需要传递值.
         postInfoOverviewPng('宽度、高度', '放大级别', '经度、纬度');
     } else {
