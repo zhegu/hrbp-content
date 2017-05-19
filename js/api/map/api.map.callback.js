@@ -2,10 +2,12 @@ var map_obj = null;
 
 function cbEmpInPostSummary(json) {
 
-    json = JSON.parse(json);
-
     alert('cbEmpInPostSummary');
     alert(json);
+    alert(JSON.parse(json));
+    json = JSON.parse(json);
+    alert(json);
+    alert('----------------------');
 
     if (checkCallBackJsonIsNotNull(json) && checkJsonDateIsNotNull(json.data)) {
         var lchar = 0;

@@ -1,6 +1,10 @@
 function mapApi(json) {
 
+    alert('mapApi');
+    alert(json);
+    alert(JSON.parse(json));
     CTSI_API_JSON = JSON.parse(json);
+    alert(CTSI_API_JSON);
     empInPostSummary();
 }
 
@@ -9,6 +13,7 @@ function mapApi(json) {
  *
  */
 function empInPostSummary() {
+    alert('empInPostSummary');
     var obj = getAreaAndGridAndPost(CTSI_API_JSON);
     obj.date = getToday(DATE_YYYYMMDD);
     api('/panorama/empInPostSummary', 3001, 'cbEmpInPostSummary', JSON.stringify(obj));
